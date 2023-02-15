@@ -7,6 +7,18 @@ import * as dat from "dat.gui"
 //Debug
 const gui = new dat.GUI()
 
+const parametres = {
+    color:0xff0000
+}
+gui
+    .addColor(parametres, 'color')
+    .onChange(()=>{
+      material.color.set(parametres.color)  
+    }
+    
+    )    
+
+
 
 
 /**
@@ -40,6 +52,7 @@ gui
 
 gui
     .add(material, 'wireframe')
+
     
 
 
