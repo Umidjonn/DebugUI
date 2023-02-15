@@ -7,16 +7,22 @@ import * as dat from "dat.gui"
 //Debug
 const gui = new dat.GUI()
 
+
 const parametres = {
-    color:0xff0000
+    color:0xff0000,
+    spin: () => 
+    {
+        gsap.to(mesh.rotation,{duration:1, y:mesh.rotation.y + Math.PI * 2})
+    }
 }
 gui
     .addColor(parametres, 'color')
     .onChange(()=>{
       material.color.set(parametres.color)  
-    }
+    })
     
-    )    
+gui
+    .add(parametres, 'spin')    
 
 
 
